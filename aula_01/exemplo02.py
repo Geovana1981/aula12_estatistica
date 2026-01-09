@@ -1,4 +1,4 @@
-import pandas as pd
+import pandas  as pd
 
 produtos = ["Notebook", "Smartphone", "Tablet", "Smartwatch", "Câmera", "Notebook"]
 qtds_estoque = [16, 28, 19, 13, 26, 9]
@@ -6,3 +6,9 @@ qtds_estoque = [16, 28, 19, 13, 26, 9]
 serie_estoque = pd.Series(qtds_estoque, index=produtos)
 print(serie_estoque)
 print(serie_estoque["Notebook"])
+print(serie_estoque["Notebook", "Tablet"])
+print(serie_estoque[["Notebook", "Tablet"]].values)
+
+# Filtrar
+print(serie_estoque[serie_estoque < 20])
+print(serie_estoque[serie_estoque.index.str.startswith ("Smart")])
